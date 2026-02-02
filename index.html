@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro</title>
+    <title>Carsport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -12,25 +12,41 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #D88DA6; /* color de tu paleta */
+            background-color: #0b0b0b; /* negro */
             font-family: Arial, sans-serif;
         }
 
         form {
-            width: 400px;
-            background-color: #ffffff;
+            width: 420px;
+            background-color: #1a1a1a;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 15px rgba(255,140,0,0.4);
+            color: white;
         }
 
         h2 {
             text-align: center;
+            color: #ff8c00; /* naranja McLaren */
+            margin-bottom: 10px;
+        }
+
+        .img-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .img-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         label {
             display: block;
             margin-top: 10px;
+            color: #ffb347;
         }
 
         input {
@@ -38,6 +54,8 @@
             padding: 8px;
             margin-top: 5px;
             box-sizing: border-box;
+            border-radius: 4px;
+            border: none;
         }
 
         .gender-group {
@@ -46,21 +64,23 @@
 
         .gender-group input {
             width: auto;
+            margin-right: 5px;
         }
 
         button {
             width: 100%;
             margin-top: 15px;
             padding: 10px;
-            background-color: #AC6889;
-            color: white;
+            background-color: #ff8c00;
+            color: black;
             border: none;
             border-radius: 5px;
+            font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #8C436B;
+            background-color: #e67600;
         }
     </style>
 </head>
@@ -68,7 +88,13 @@
 <body>
 
 <form id="formRegistro">
-    <h2>Registro</h2>
+    <h2>Carsport - Registro</h2>
+
+    <!-- Imagen -->
+    <div class="img-container">
+        <!-- Cambia el src por la imagen que quieras -->
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Auto deportivo">
+    </div>
 
     <label>Nombre y Apellido:</label>
     <input type="text" id="nombre" required>
@@ -76,8 +102,8 @@
     <label>Correo electrónico:</label>
     <input type="email" id="correo" required>
 
-    <label>Edad (15 a 100):</label>
-    <input type="number" id="edad" min="15" max="100" required>
+    <label>Edad (1 a 110):</label>
+    <input type="number" id="edad" min="1" max="110" required>
 
     <label>Género:</label>
     <div class="gender-group">
@@ -92,7 +118,7 @@
     <label>Fecha de cumpleaños:</label>
     <input type="date" id="fecha" required>
 
-    <button type="submit">Enviar</button>
+    <button type="submit">Enviar Registro</button>
 </form>
 
 <script>
@@ -102,11 +128,11 @@ document.getElementById("formRegistro").addEventListener("submit", function(e) {
     if (this.checkValidity()) {
         alert("Todo bien, registro enviado");
         this.reset();
+    } else {
+        alert("Faltan datos o hay campos incorrectos");
     }
 });
 </script>
 
 </body>
 </html>
-
-
